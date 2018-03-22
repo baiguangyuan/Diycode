@@ -1,8 +1,8 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion rootProject.ext.android.compileSdkVersion
-    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     compileOptions {
         sourceCompatibility rootProject.ext.jdkVersion
@@ -10,12 +10,10 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion rootProject.ext.android.minSdkVersion
-        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        versionName "1.0.0"
     }
 
     buildTypes {
@@ -27,10 +25,11 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:' + rootProject.ext.android.supportLibVersion
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api 'com.android.support:appcompat-v7:' + rootProject.ext.supportLibVersion
+    api 'com.android.support.constraint:constraint-layout:' + rootProject.ext.constraintLibVersion
+    api 'com.android.support:design:' + rootProject.ext.supportLibVersion
+    api 'com.android.support:recyclerview-v7:' + rootProject.ext.supportLibVersion
+
+    api 'com.flyco.tablayout:FlycoTabLayout_Lib:' + rootProject.ext.flycoTabLayoutVersion
 }

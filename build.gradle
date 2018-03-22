@@ -1,27 +1,40 @@
 buildscript {
     repositories {
+        google()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.0.1'
     }
 }
 
 allprojects {
     repositories {
+        google()
         jcenter()
     }
 }
 
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
 ext {
+    compileSdkVersion = 27
+    buildToolsVersion = '27.0.1'
+    minSdkVersion = 21
+    targetSdkVersion = 25
 
     jdkVersion = JavaVersion.VERSION_1_7
 
-    android = [
-            compileSdkVersion: 25,
-            buildToolsVersion: '26.0.0',
-            minSdkVersion    : 21,
-            targetSdkVersion : 25,
-            supportLibVersion: '25.3.1'
-    ]
+    supportLibVersion = '27.0.2'
+    constraintLibVersion = '1.0.2'
+    rxjava2Version = '2.1.11'
+    rxAndroid2Version = '2.0.2'
+
+    retrofit2Version = '2.4.0'
+    okhttp3Version = '3.10.0'
+
+    frescoVersion = '1.8.1'
+    flycoTabLayoutVersion = '2.1.2@aar'
 }
