@@ -1,35 +1,40 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion rootProject.ext.buildToolsVersion
 
-    compileOptions {
-        sourceCompatibility rootProject.ext.jdkVersion
-        targetCompatibility rootProject.ext.jdkVersion
-    }
+  compileOptions {
+    sourceCompatibility rootProject.ext.jdkVersion
+    targetCompatibility rootProject.ext.jdkVersion
+  }
 
-    defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0.0"
-    }
+  defaultConfig {
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    versionCode 1
+    versionName "1.0.0"
+  }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
+  }
 }
 
 dependencies {
-    api fileTree(include: ['*.jar'], dir: 'libs')
-    api 'com.android.support:appcompat-v7:' + rootProject.ext.supportLibVersion
-    api 'com.android.support.constraint:constraint-layout:' + rootProject.ext.constraintLibVersion
-    api 'com.android.support:design:' + rootProject.ext.supportLibVersion
-    api 'com.android.support:recyclerview-v7:' + rootProject.ext.supportLibVersion
+  api fileTree(include: ['*.jar'], dir: 'libs')
+  implementation 'com.orhanobut:logger:1.15'
 
-    api 'com.flyco.tablayout:FlycoTabLayout_Lib:' + rootProject.ext.flycoTabLayoutVersion
+  api 'com.android.support:appcompat-v7:' + rootProject.ext.supportLibVersion
+  api 'com.android.support.constraint:constraint-layout:' + rootProject.ext.constraintLibVersion
+  api 'com.android.support:design:' + rootProject.ext.supportLibVersion
+  api 'com.android.support:recyclerview-v7:' + rootProject.ext.supportLibVersion
+
+  api 'com.hannesdorfmann.mosby3:mvp-lce:3.1.0'
+  api 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+  api 'in.srain.cube:ultra-ptr:1.0.11'
+  api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
 }

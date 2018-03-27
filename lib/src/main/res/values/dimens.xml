@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  <dimen name="sk_toolbar_height">48dp</dimen>
   <dimen name="sk_bottom_nav_height">56dp</dimen>
+  <dimen name="sk_tab_height">36dp</dimen>
+
+  <dimen name="text_size_xxs">10sp</dimen>
+  <dimen name="text_size_xs">12sp</dimen>
+  <dimen name="text_size_s">14sp</dimen>
+  <dimen name="text_size_m">16sp</dimen>
+  <dimen name="text_size_l">18sp</dimen>
+  <dimen name="text_size_xl">20sp</dimen>
+  <dimen name="text_size_xxl">22sp</dimen>
+
+  <dimen name="spacing_4">4dp</dimen>
+  <dimen name="spacing_8">8dp</dimen>
+  <dimen name="spacing_16">16dp</dimen>
 </resources>
